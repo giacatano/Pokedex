@@ -19,6 +19,8 @@
 		56702BD12C4FA62800B25FE4 /* PokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BD02C4FA62800B25FE4 /* PokemonRepository.swift */; };
 		56702BD42C4FA77D00B25FE4 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BD32C4FA77D00B25FE4 /* PokemonModel.swift */; };
 		56702BD82C4FAD8200B25FE4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BD72C4FAD8200B25FE4 /* HomeViewModel.swift */; };
+		56702BE12C4FD25F00B25FE4 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56702BE02C4FD25F00B25FE4 /* HomeTableViewCell.xib */; };
+		56702BE22C4FD25F00B25FE4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BDF2C4FD25F00B25FE4 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		56702BD02C4FA62800B25FE4 /* PokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; };
 		56702BD32C4FA77D00B25FE4 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		56702BD72C4FAD8200B25FE4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		56702BDF2C4FD25F00B25FE4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		56702BE02C4FD25F00B25FE4 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			children = (
 				56702BB42C4F93F900B25FE4 /* HomeViewController.swift */,
 				56702BB62C4F93F900B25FE4 /* Main.storyboard */,
+				56702BDF2C4FD25F00B25FE4 /* HomeTableViewCell.swift */,
+				56702BE02C4FD25F00B25FE4 /* HomeTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			files = (
 				56702BBD2C4F93FB00B25FE4 /* Assets.xcassets in Resources */,
 				56702BC02C4F93FB00B25FE4 /* Base in Resources */,
+				56702BE12C4FD25F00B25FE4 /* HomeTableViewCell.xib in Resources */,
 				56702BB82C4F93F900B25FE4 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +209,7 @@
 				56702BB52C4F93F900B25FE4 /* HomeViewController.swift in Sources */,
 				56702BC82C4F94EB00B25FE4 /* APIHandler.swift in Sources */,
 				56702BB12C4F93F900B25FE4 /* AppDelegate.swift in Sources */,
+				56702BE22C4FD25F00B25FE4 /* HomeTableViewCell.swift in Sources */,
 				56702BCB2C4F971E00B25FE4 /* Endpoints.swift in Sources */,
 				56702BB32C4F93F900B25FE4 /* SceneDelegate.swift in Sources */,
 				56702BD42C4FA77D00B25FE4 /* PokemonModel.swift in Sources */,
