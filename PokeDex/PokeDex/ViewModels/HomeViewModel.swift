@@ -14,7 +14,7 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel {
     let pokemonRepository: PokemonRepositoryType?
-    var pokemons: [PokemonResponse]
+    private var pokemons: [PokemonResponse]
     
     init(pokemonRepository: PokemonRepositoryType?, pokemons: [PokemonResponse] ) {
         self.pokemonRepository = pokemonRepository
@@ -32,21 +32,4 @@ class HomeViewModel {
             }
         }
     }
-    
-    
-//    func fetchRockets() {
-//           rocketRepository?.fetchRockets { [weak self] result in
-//               switch result {
-//               case .failure(let error):
-//                   print(error)
-//                  // self?.viewModelProtocol?.showError(error: error)
-//               case .success(let rocketList):
-//                   self?.rockets = rocketList
-//                  // self?.viewModelProtocol?.reloadView()
-//                   print(rocketList[0])
-//               }
-//           }
-//       }
-//
-    
 }
