@@ -8,5 +8,5 @@
 import Foundation
 
 struct Endpoints {
-    static let pokemon = ""
+    static let pokemon = "https://pokeapi.co/api/v2/pokemon"
 }
