@@ -1,0 +1,52 @@
+//
+//  HomeViewModel.swift
+//  PokeDex
+//
+//  Created by Gia Catano on 2024/07/23.
+//
+
+import Foundation
+
+protocol HomeViewModelProtocol {
+    func reloadView()
+    func showError(error: NetworkError)
+}
+
+class HomeViewModel {
+    let pokemonRepository: PokemonRepositoryType?
+    var pokemons: [PokemonResponse]
+    
+    init(pokemonRepository: PokemonRepositoryType?, pokemons: [PokemonResponse] ) {
+        self.pokemonRepository = pokemonRepository
+        self.pokemons = []
+    }
+    
+    func fetchPokemon(){
+        pokemonRepository?.fetchPokemon { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let pokemon):
+                self?.pokemons  = pokemon
+                print(pokemon)
+            }
+        }
+    }
+    
+    
+//    func fetchRockets() {
+//           rocketRepository?.fetchRockets { [weak self] result in
+//               switch result {
+//               case .failure(let error):
+//                   print(error)
+//                  // self?.viewModelProtocol?.showError(error: error)
+//               case .success(let rocketList):
+//                   self?.rockets = rocketList
+//                  // self?.viewModelProtocol?.reloadView()
+//                   print(rocketList[0])
+//               }
+//           }
+//       }
+//
+    
+}
