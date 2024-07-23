@@ -8,12 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private lazy var pokemonViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
