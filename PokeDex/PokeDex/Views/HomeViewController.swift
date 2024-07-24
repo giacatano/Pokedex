@@ -11,28 +11,32 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var pokemonTableView: UITableView!
     
     private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()))
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
     }
     
-    
     func setUpTableView(){
         pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: "pokemonNib")
+        pokemonTableView.dataSource = self
+        pokemonTableView.delegate = self
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        5
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        200
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let pokemonCell = HomeTableViewCell() {
-            
+        guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: "pokemonNib", for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
         }
-        return UITableViewCell
+        return pokemonNib
     }
 }
