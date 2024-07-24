@@ -16,7 +16,7 @@ class HomeViewModel {
     let pokemonRepository: PokemonRepositoryType?
     private var pokemons: [PokemonResponse]
     
-    init(pokemonRepository: PokemonRepositoryType?, pokemons: [PokemonResponse] ) {
+    init(pokemonRepository: PokemonRepositoryType?) {
         self.pokemonRepository = pokemonRepository
         self.pokemons = []
     }
