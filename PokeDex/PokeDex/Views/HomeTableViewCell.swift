@@ -18,4 +18,8 @@ class HomeTableViewCell: UITableViewCell {
     static func setPokemonNib() -> UINib {
         UINib(nibName: "HomeTableViewCell" , bundle: nil)
     }
+    
+    func image(number: String){
+        pokemonCharacterImageView.load(urlString: Endpoints.images + number + ".png")
+    }
 }
