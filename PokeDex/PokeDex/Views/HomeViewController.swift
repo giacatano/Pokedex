@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
         homeViewModel.fetchPokemon()
     }
     
-    func setUpTableView(){
+    private func setUpTableView(){
         pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: "pokemonNib")
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
@@ -45,7 +45,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: "pokemonNib", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        pokemonNib.image(number: String(indexPath.row + 1))
+        pokemonNib.setImage(number: String(indexPath.row + 1))
+   //TODO:     pokemonNib.pokemonCharacterNameLabel.text = 
         return pokemonNib
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "infoSegue", sender: self)
     }
 }
