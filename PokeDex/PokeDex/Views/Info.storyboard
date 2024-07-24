@@ -196,9 +196,15 @@
                         <outlet property="attackStatLabel" destination="j7D-hA-N4h" id="gTF-Bj-pMP"/>
                         <outlet property="defenseLabel" destination="RBA-aQ-z7v" id="yza-uN-SsL"/>
                         <outlet property="defenseStatLabel" destination="8kv-44-Q7d" id="vjz-MG-lfc"/>
-                        <outlet property="hpBaseStatLabel" destination="Gk6-FM-ws1" id="8TB-Bp-r0J"/>
                         <outlet property="hpLabel" destination="3y7-0H-PeA" id="uwA-j2-t5R"/>
+                        <outlet property="hpStatLabel" destination="Gk6-FM-ws1" id="AY6-l3-VfB"/>
                         <outlet property="pokemonCharacterImageView" destination="a9q-Qr-Ne4" id="DHL-Y0-KFo"/>
+                        <outlet property="specialAttackLabel" destination="yqP-Xx-rpQ" id="wEy-f0-EwT"/>
+                        <outlet property="specialAttackStatLabel" destination="oFx-Oe-sBD" id="rXT-0s-aVa"/>
+                        <outlet property="specialDefenseLabel" destination="NnC-GM-b3R" id="IMN-jt-fdl"/>
+                        <outlet property="specialDefenseStatLabel" destination="tjy-VW-3hZ" id="4OC-T4-HRn"/>
+                        <outlet property="speedLabel" destination="RPx-hF-tvN" id="Qsc-7A-PpY"/>
+                        <outlet property="speedStatLabel" destination="0qG-6A-T8Z" id="3fH-jM-hQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
