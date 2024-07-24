@@ -8,10 +8,10 @@
 import Foundation
 
 struct PokemonResponse: Codable {
-    let results: [Results]
+    let results: [Pokemon]
 }
 
-struct Results: Codable {
+struct Pokemon: Codable {
     let name: String
     let url: String
 }

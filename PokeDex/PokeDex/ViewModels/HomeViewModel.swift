@@ -14,7 +14,7 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel {
     let pokemonRepository: PokemonRepositoryType?
-    private var pokemons: [PokemonResponse]
+    private var pokemons: [Pokemon]
     
     init(pokemonRepository: PokemonRepositoryType?) {
         self.pokemonRepository = pokemonRepository
@@ -27,7 +27,7 @@ class HomeViewModel {
             case .failure(let error):
                 print(error)
             case .success(let pokemon):
-                self?.pokemons  = pokemon
+                self?.pokemons  = pokemon.results
                 print(pokemon)
             }
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias PokemonResult = (Result<[PokemonResponse], NetworkError>) -> Void
+typealias PokemonResult = (Result<PokemonResponse, NetworkError>) -> Void
 
 protocol PokemonRepositoryType {
     func fetchPokemon(completion: @escaping PokemonResult)
@@ -21,6 +21,6 @@ class PokemonRepository: PokemonRepositoryType {
     }
     
     func fetchPokemon(completion: @escaping PokemonResult) {
-        apiHandler.request(endpoint: Endpoints.pokemon, header: .GET, model: [PokemonResponse].self, completion: completion)
+        apiHandler.request(endpoint: Endpoints.pokemon, header: .GET, model: PokemonResponse.self, completion: completion)
         }
     }
