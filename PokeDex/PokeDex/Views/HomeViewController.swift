@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeViewModelProtocol {
+    
     @IBOutlet private weak var pokemonTableView: UITableView!
     
-    private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()))
+    private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +19,22 @@ class HomeViewController: UIViewController {
         homeViewModel.fetchPokemon()
     }
     
-    func setUpTableView(){
+    private func setUpTableView(){
         pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: "pokemonNib")
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
+    }
+    
+    func reloadView() {
+    }
+    
+    func showError(error: NetworkError) {
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        100
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -38,6 +45,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: "pokemonNib", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
+        pokemonNib.setImage(number: String(indexPath.row + 1))
+   //TODO:     pokemonNib.pokemonCharacterNameLabel.text = 
         return pokemonNib
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "infoSegue", sender: self)
     }
 }

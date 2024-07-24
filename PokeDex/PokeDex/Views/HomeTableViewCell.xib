@@ -59,7 +59,7 @@
                 <outlet property="pokemonCharacterImageView" destination="TxF-cm-yf7" id="wAX-Lo-zmn"/>
                 <outlet property="pokemonCharacterNameLabel" destination="cEO-vb-nkU" id="HMP-Z9-xjz"/>
             </connections>
-            <point key="canvasLocation" x="112.97709923664122" y="143.3098591549296"/>
+            <point key="canvasLocation" x="-34" y="180"/>
         </tableViewCell>
     </objects>
     <resources>

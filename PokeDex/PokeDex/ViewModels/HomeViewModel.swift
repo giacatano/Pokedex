@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeViewModelProtocol {
+protocol HomeViewModelProtocol: AnyObject {
     func reloadView()
     func showError(error: NetworkError)
 }
@@ -15,10 +15,12 @@ protocol HomeViewModelProtocol {
 class HomeViewModel {
     let pokemonRepository: PokemonRepositoryType?
     private var pokemons: [Pokemon]
+    private weak var delegate: HomeViewModelProtocol?
     
-    init(pokemonRepository: PokemonRepositoryType?) {
+    init(pokemonRepository: PokemonRepositoryType?, delegate: HomeViewModelProtocol) {
         self.pokemonRepository = pokemonRepository
         self.pokemons = []
+        self.delegate = delegate
     }
     
     func fetchPokemon(){
@@ -28,6 +30,7 @@ class HomeViewModel {
                 print(error)
             case .success(let pokemon):
                 self?.pokemons  = pokemon.results
+                self?.delegate?.reloadView()
                 print(pokemon)
             }
         }

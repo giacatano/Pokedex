@@ -8,5 +8,6 @@
 import Foundation
 
 struct Endpoints {
-    static let pokemon = "https://pokeapi.co/api/v2/pokemon"
+    static let pokemon = "https://pokeapi.co/api/v2/pokemon?limit=100"
+    static let images = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 }
