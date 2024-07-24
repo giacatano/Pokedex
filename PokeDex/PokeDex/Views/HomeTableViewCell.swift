@@ -8,12 +8,14 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-
+    @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
+    @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    static func setPokemonNib() -> UINib {
+        UINib(nibName: "pokemonNib" , bundle: nil)
     }
 }
