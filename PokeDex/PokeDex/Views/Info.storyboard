@@ -191,6 +191,15 @@
                             <constraint firstItem="5mN-fD-SHt" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uIF-ll-eCs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="attackLabel" destination="IZs-P7-Kgg" id="8n9-TA-oG7"/>
+                        <outlet property="attackStatLabel" destination="j7D-hA-N4h" id="gTF-Bj-pMP"/>
+                        <outlet property="defenseLabel" destination="RBA-aQ-z7v" id="yza-uN-SsL"/>
+                        <outlet property="defenseStatLabel" destination="8kv-44-Q7d" id="vjz-MG-lfc"/>
+                        <outlet property="hpBaseStatLabel" destination="Gk6-FM-ws1" id="8TB-Bp-r0J"/>
+                        <outlet property="hpLabel" destination="3y7-0H-PeA" id="uwA-j2-t5R"/>
+                        <outlet property="pokemonCharacterImageView" destination="a9q-Qr-Ne4" id="DHL-Y0-KFo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
