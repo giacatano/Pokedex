@@ -9,13 +9,14 @@ import UIKit
 
 class InfoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var statsCategoryLabel: UILabel!
-    @IBOutlet weak var baseStatLabel: UILabel!
+    @IBOutlet private weak var statsCategoryLabel: UILabel!
+    @IBOutlet private weak var baseStatLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-
+    }
+    
+    static func setPokemonStatsNib() -> UINib {
+        UINib(nibName: "InfoTableViewCell" , bundle: nil)
     }
 }
