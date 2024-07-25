@@ -25,6 +25,8 @@
 		56702BE82C4FD70A00B25FE4 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56702BE72C4FD70A00B25FE4 /* Info.storyboard */; };
 		56702BED2C50F43500B25FE4 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BEC2C50F43500B25FE4 /* UIImageView+Extension.swift */; };
 		56702BEF2C5124DE00B25FE4 /* PokemonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BEE2C5124DE00B25FE4 /* PokemonInfoModel.swift */; };
+		56702BFA2C52365400B25FE4 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */; };
+		56702BFB2C52365400B25FE4 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		56702BE72C4FD70A00B25FE4 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		56702BEC2C50F43500B25FE4 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		56702BEE2C5124DE00B25FE4 /* PokemonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoModel.swift; sourceTree = "<group>"; };
+		56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				56702BE02C4FD25F00B25FE4 /* HomeTableViewCell.xib */,
 				56702BE32C4FD66300B25FE4 /* InfoViewController.swift */,
 				56702BE72C4FD70A00B25FE4 /* Info.storyboard */,
+				56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */,
+				56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56702BBD2C4F93FB00B25FE4 /* Assets.xcassets in Resources */,
+				56702BFB2C52365400B25FE4 /* InfoTableViewCell.xib in Resources */,
 				56702BC02C4F93FB00B25FE4 /* Base in Resources */,
 				56702BE12C4FD25F00B25FE4 /* HomeTableViewCell.xib in Resources */,
 				56702BE82C4FD70A00B25FE4 /* Info.storyboard in Resources */,
@@ -235,6 +242,7 @@
 				56702BB12C4F93F900B25FE4 /* AppDelegate.swift in Sources */,
 				56702BE22C4FD25F00B25FE4 /* HomeTableViewCell.swift in Sources */,
 				56702BCB2C4F971E00B25FE4 /* Endpoints.swift in Sources */,
+				56702BFA2C52365400B25FE4 /* InfoTableViewCell.swift in Sources */,
 				56702BB32C4F93F900B25FE4 /* SceneDelegate.swift in Sources */,
 				56702BD42C4FA77D00B25FE4 /* PokemonModel.swift in Sources */,
 			);
