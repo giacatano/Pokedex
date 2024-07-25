@@ -30,7 +30,6 @@ class InfoViewModel {
             case .success(let pokemonStats):
                 self?.stats = pokemonStats.stats
                 self?.delegate?.reloadView()
-                print(pokemonStats)
             }
         }
     }
@@ -47,14 +46,14 @@ class InfoViewModel {
     
     func displayScore(index: Int) -> String {
         guard index >= 0 && index < self.stats.count else {
-            return "Unavailable Stats"
+            return ""
         }
         return String(stats[index].base_stat)
     }
     
     func displayCategory(index: Int) -> String {
         guard index >= 0 && index < self.stats.count else {
-            return "Unavailable Stats"
+            return ""
         }
         return stats[index].stat.name
     }

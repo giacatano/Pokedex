@@ -17,7 +17,7 @@ class InfoTableViewCell: UITableViewCell {
     }
     
     static func setPokemonStatsNib() -> UINib {
-        UINib(nibName: "InfoTableViewCell" , bundle: nil)
+        UINib(nibName: Constants.Identifiers.infoTableViewCell , bundle: nil)
     }
     
     func setupStatsUI(category: String, stat: String) {

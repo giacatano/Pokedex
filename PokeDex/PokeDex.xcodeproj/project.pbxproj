@@ -29,6 +29,7 @@
 		56702BFB2C52365400B25FE4 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */; };
 		56702BFD2C524E0000B25FE4 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */; };
 		56702C042C5288A700B25FE4 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702C032C5288A700B25FE4 /* CoreData.swift */; };
+		56702C082C529A0200B25FE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702C072C529A0200B25FE4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		56702C032C5288A700B25FE4 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		56702C072C529A0200B25FE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		56702BAF2C4F93F900B25FE4 /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
+				56702C062C52989500B25FE4 /* Constants */,
 				56702C052C528BEC00B25FE4 /* CoreData */,
 				56702BEB2C50F3C500B25FE4 /* Extensions */,
 				56702BC92C4F94F600B25FE4 /* ServiceLayer */,
@@ -171,6 +174,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		56702C062C52989500B25FE4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				56702C072C529A0200B25FE4 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56702BBB2C4F93F900B25FE4 /* PokeDex.xcdatamodeld in Sources */,
+				56702C082C529A0200B25FE4 /* Constants.swift in Sources */,
 				56702BE62C4FD66300B25FE4 /* InfoViewController.swift in Sources */,
 				56702BD82C4FAD8200B25FE4 /* HomeViewModel.swift in Sources */,
 				56702BD12C4FA62800B25FE4 /* PokemonRepository.swift in Sources */,

@@ -10,7 +10,6 @@ import CoreData
 import UIKit
 
 protocol CoreDataHandlerType {
-    
 }
 
 class CoreDataHandler: CoreDataHandlerType {
