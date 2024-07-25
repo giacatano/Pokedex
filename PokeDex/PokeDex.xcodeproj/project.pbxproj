@@ -27,6 +27,7 @@
 		56702BEF2C5124DE00B25FE4 /* PokemonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BEE2C5124DE00B25FE4 /* PokemonInfoModel.swift */; };
 		56702BFA2C52365400B25FE4 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */; };
 		56702BFB2C52365400B25FE4 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */; };
+		56702BFD2C524E0000B25FE4 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		56702BEE2C5124DE00B25FE4 /* PokemonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoModel.swift; sourceTree = "<group>"; };
 		56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				56702BD72C4FAD8200B25FE4 /* HomeViewModel.swift */,
+				56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				56702BD82C4FAD8200B25FE4 /* HomeViewModel.swift in Sources */,
 				56702BD12C4FA62800B25FE4 /* PokemonRepository.swift in Sources */,
 				56702BB52C4F93F900B25FE4 /* HomeViewController.swift in Sources */,
+				56702BFD2C524E0000B25FE4 /* InfoViewModel.swift in Sources */,
 				56702BC82C4F94EB00B25FE4 /* APIHandler.swift in Sources */,
 				56702BEF2C5124DE00B25FE4 /* PokemonInfoModel.swift in Sources */,
 				56702BED2C50F43500B25FE4 /* UIImageView+Extension.swift in Sources */,
