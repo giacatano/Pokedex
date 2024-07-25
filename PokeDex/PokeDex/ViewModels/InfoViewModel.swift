@@ -41,20 +41,20 @@ class InfoViewModel {
         self.image = image
     }
     
-    func displayName()-> String {
+    func displayName() -> String {
         return self.name ?? ""
     }
     
     func displayScore(index: Int) -> String {
         guard index >= 0 && index < self.stats.count else {
-            return "nothing"
+            return "Unavailable Stats"
         }
         return String(stats[index].base_stat)
     }
     
     func displayCategory(index: Int) -> String {
         guard index >= 0 && index < self.stats.count else {
-            return "nothing"
+            return "Unavailable Stats"
         }
         return stats[index].stat.name
     }

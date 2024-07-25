@@ -20,11 +20,16 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
         setUpTableView()
         infoViewModel.fetchPokemonStats()
     }
+
+    func setPokemonCharacter(url: String, image: String, name: String) {
+            infoViewModel.setPokemonInfo(url: url, image: image, name: name)
+        }
     
     private func setUpTableView() {
         pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: "InfoTableViewCell")
         pokemonStatsTableView.dataSource = self
         pokemonStatsTableView.delegate = self
+        self.pokemonCharacterNameLabel.text = infoViewModel.displayName()
     }
     
     func reloadView() {
@@ -33,7 +38,10 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     func showError(error: NetworkError) {
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+            infoViewModel.fetchPokemonStats()
+        }
 }
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -49,10 +57,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
         guard let statsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as? InfoTableViewCell else {
             return UITableViewCell()
         }
-        
-        if let pokemon = 
         statsNib.setupStatsUI(category: infoViewModel.displayCategory(index: indexPath.row), stat: infoViewModel.displayScore(index: indexPath.row))
-        
         return statsNib
     }
 }
