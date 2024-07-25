@@ -9,7 +9,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
-    @IBOutlet  weak var pokemonCharacterNameLabel: UILabel!
+    @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +19,8 @@ class HomeTableViewCell: UITableViewCell {
         UINib(nibName: "HomeTableViewCell" , bundle: nil)
     }
     
-    func setImage(number: String){
-        pokemonCharacterImageView.load(urlString: Endpoints.images + number + ".png")
+    func setupPokemonUI(index: String, name: String) {
+        pokemonCharacterImageView.load(urlString: Endpoints.images + index + ".png")
+        pokemonCharacterNameLabel.text = name
     }
 }
