@@ -31,7 +31,6 @@ class HomeViewModel {
             case .success(let pokemon):
                 self?.pokemons  = pokemon.results
                 self?.delegate?.reloadView()
-                print(pokemon)
             }
         }
     }
