@@ -13,9 +13,12 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
     @IBOutlet private weak var pokemonStatsTableView: UITableView!
     
+    private lazy var infoViewModel = InfoViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        infoViewModel.fetchPokemonStats()
     }
     
     private func setUpTableView() {
@@ -30,7 +33,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     func showError(error: NetworkError) {
     }
-    
+
 }
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -43,9 +46,13 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let pokemonStatsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as? HomeTableViewCell else {
+        guard let statsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as? InfoTableViewCell else {
             return UITableViewCell()
         }
-        return pokemonStatsNib
+        
+        if let pokemon = 
+        statsNib.setupStatsUI(category: infoViewModel.displayCategory(index: indexPath.row), stat: infoViewModel.displayScore(index: indexPath.row))
+        
+        return statsNib
     }
 }
