@@ -27,6 +27,6 @@ class PokemonRepository: PokemonRepositoryType {
     }
     
     func fetchPokemonStats(url: String, completion: @escaping PokemonStatsResult) {
-        //
+        apiHandler.request(endpoint: url, header: .GET, model: PokemonInfoResponse.self, completion: completion)
     }
 }
