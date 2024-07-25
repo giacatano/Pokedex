@@ -55,7 +55,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "infoSegue", sender: self)
+        performSegue(withIdentifier: "infoSegue", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
