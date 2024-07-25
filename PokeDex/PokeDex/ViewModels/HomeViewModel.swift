@@ -35,4 +35,11 @@ class HomeViewModel {
             }
         }
     }
+    
+    func pokemonCharacter(index: Int) -> Pokemon? {
+        guard index >= 0 && index < self.pokemons.count else {
+            return nil
+        }
+        return self.pokemons[index]
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class InfoViewController: UIViewController, HomeViewModelProtocol {
-  
+    
     @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
     @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
     @IBOutlet private weak var pokemonStatsTableView: UITableView!
@@ -18,7 +18,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
         setUpTableView()
     }
     
-    private func setUpTableView(){
+    private func setUpTableView() {
         pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: "InfoTableViewCell")
         pokemonStatsTableView.dataSource = self
         pokemonStatsTableView.delegate = self
@@ -30,7 +30,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     func showError(error: NetworkError) {
     }
-
+    
 }
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -46,7 +46,6 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
         guard let pokemonStatsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        pokemonStatsNib.setImage(number: String(indexPath.row + 1))
         return pokemonStatsNib
     }
 }

@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
     }
     
     func reloadView() {
+        pokemonTableView.reloadData()
     }
     
     func showError(error: NetworkError) {
@@ -45,8 +46,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: "pokemonNib", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        pokemonNib.setImage(number: String(indexPath.row + 1))
-   //TODO:     pokemonNib.pokemonCharacterNameLabel.text = 
+        if let pokemon = homeViewModel.pokemonCharacter(index: indexPath.row) {
+            pokemonNib.setupPokemonUI(index: String(indexPath.row + 1), name: pokemon.name)
+        } else {
+            pokemonNib.setupPokemonUI(index: "0", name: "Unknown")
+        }
         return pokemonNib
     }
     
