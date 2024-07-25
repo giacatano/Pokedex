@@ -13,6 +13,9 @@ protocol HomeViewModelProtocol: AnyObject {
 }
 
 class HomeViewModel {
+    
+    //MARK: Variables
+    
     let pokemonRepository: PokemonRepositoryType?
     private var pokemons: [Pokemon]
     private weak var delegate: HomeViewModelProtocol?
@@ -23,6 +26,8 @@ class HomeViewModel {
         self.pokemons = []
         self.delegate = delegate
     }
+    
+    //MARK: Functions
     
     func fetchPokemon() {
         pokemonRepository?.fetchPokemon { [weak self] result in

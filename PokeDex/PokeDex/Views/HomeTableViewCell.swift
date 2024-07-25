@@ -8,15 +8,20 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    
+    //MARK: IBOutlets
+    
     @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
     @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
+    
+    //MARK: Functions
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     static func setPokemonNib() -> UINib {
-        UINib(nibName: "HomeTableViewCell" , bundle: nil)
+        UINib(nibName: Constants.Identifiers.homeTableViewCell , bundle: nil)
     }
     
     func setupPokemonUI(index: String, name: String) {

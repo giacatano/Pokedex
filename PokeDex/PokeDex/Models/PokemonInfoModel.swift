@@ -8,7 +8,7 @@
 import Foundation
 
 struct PokemonInfoResponse: Codable {
-     let stats: [Statistics]
+    let stats: [Statistics]
 }
 
 struct Statistics: Codable {
