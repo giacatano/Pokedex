@@ -28,6 +28,7 @@
 		56702BFA2C52365400B25FE4 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */; };
 		56702BFB2C52365400B25FE4 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */; };
 		56702BFD2C524E0000B25FE4 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */; };
+		56702C042C5288A700B25FE4 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56702C032C5288A700B25FE4 /* CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		56702BF82C52365400B25FE4 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		56702BF92C52365400B25FE4 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		56702BFC2C524E0000B25FE4 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		56702C032C5288A700B25FE4 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				56702BBE2C4F93FB00B25FE4 /* LaunchScreen.storyboard */,
 				56702BC12C4F93FB00B25FE4 /* Info.plist */,
 				56702BB92C4F93F900B25FE4 /* PokeDex.xcdatamodeld */,
+				56702C032C5288A700B25FE4 /* CoreData.swift */,
 			);
 			path = PokeDex;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				56702BB12C4F93F900B25FE4 /* AppDelegate.swift in Sources */,
 				56702BE22C4FD25F00B25FE4 /* HomeTableViewCell.swift in Sources */,
 				56702BCB2C4F971E00B25FE4 /* Endpoints.swift in Sources */,
+				56702C042C5288A700B25FE4 /* CoreData.swift in Sources */,
 				56702BFA2C52365400B25FE4 /* InfoTableViewCell.swift in Sources */,
 				56702BB32C4F93F900B25FE4 /* SceneDelegate.swift in Sources */,
 				56702BD42C4FA77D00B25FE4 /* PokemonModel.swift in Sources */,
