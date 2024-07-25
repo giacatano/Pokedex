@@ -25,6 +25,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     }
     
     func reloadView() {
+        pokemonStatsTableView.reloadData()
     }
     
     func showError(error: NetworkError) {
