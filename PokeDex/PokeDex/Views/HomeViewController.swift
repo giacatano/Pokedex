@@ -57,4 +57,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "infoSegue", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = sender as? IndexPath,
+         segue.identifier == "infoSegue" {
+            if let infoViewController = segue.destination as? InfoViewController {
+                infoViewController.setPokemonCharacter(url: homeViewModel.pokemonCharacter(index: indexPath.row)?.url ?? "", image: "", name: homeViewModel.pokemonCharacter(index: indexPath.row)?.name ?? "")
+            }
+        }
+    }
 }
