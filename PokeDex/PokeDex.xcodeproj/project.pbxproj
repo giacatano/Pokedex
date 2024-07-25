@@ -88,6 +88,7 @@
 		56702BAF2C4F93F900B25FE4 /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
+				56702C052C528BEC00B25FE4 /* CoreData */,
 				56702BEB2C50F3C500B25FE4 /* Extensions */,
 				56702BC92C4F94F600B25FE4 /* ServiceLayer */,
 				56702BD22C4FA72B00B25FE4 /* Models */,
@@ -99,8 +100,6 @@
 				56702BBC2C4F93FB00B25FE4 /* Assets.xcassets */,
 				56702BBE2C4F93FB00B25FE4 /* LaunchScreen.storyboard */,
 				56702BC12C4F93FB00B25FE4 /* Info.plist */,
-				56702BB92C4F93F900B25FE4 /* PokeDex.xcdatamodeld */,
-				56702C032C5288A700B25FE4 /* CoreData.swift */,
 			);
 			path = PokeDex;
 			sourceTree = "<group>";
@@ -161,6 +160,15 @@
 				56702BEC2C50F43500B25FE4 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		56702C052C528BEC00B25FE4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				56702BB92C4F93F900B25FE4 /* PokeDex.xcdatamodeld */,
+				56702C032C5288A700B25FE4 /* CoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

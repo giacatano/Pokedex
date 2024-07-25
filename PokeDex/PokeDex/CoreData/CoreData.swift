@@ -28,6 +28,29 @@ class CoreDataHandler: CoreDataHandlerType {
     func saveObjectIntoCoreData(name: String) {
         let newPokemon = PokemonCoreData(context: context)
         newPokemon.name = name
+        saveContext()
         print("saved into core data: \(name)")
+    }
+    
+    func fetchNames() -> [PokemonCoreData] {
+        
+        do {
+            let fetchedPokemons = try context.fetch(PokemonCoreData.fetchRequest())
+            print("loaded from coredata: \(fetchedPokemons)")
+            return fetchedPokemons
+        } catch {
+            return []
+        }
+    }
+    
+    private func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 }
