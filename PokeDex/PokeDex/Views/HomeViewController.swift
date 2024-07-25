@@ -9,9 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController, HomeViewModelProtocol {
     
+    //MARK: IBOutlets
+    
     @IBOutlet private weak var pokemonTableView: UITableView!
     
+    //MARK: Variables
+    
     private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
+    
+    //MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,8 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
         pokemonTableView.delegate = self
     }
 }
+
+//MARK: Extensions
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

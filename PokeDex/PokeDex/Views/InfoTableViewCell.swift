@@ -9,8 +9,12 @@ import UIKit
 
 class InfoTableViewCell: UITableViewCell {
     
+    //MARK: IBOutlets
+    
     @IBOutlet private weak var statsCategoryLabel: UILabel!
     @IBOutlet private weak var baseStatLabel: UILabel!
+    
+    //MARK: Functions
     
     override func awakeFromNib() {
         super.awakeFromNib()

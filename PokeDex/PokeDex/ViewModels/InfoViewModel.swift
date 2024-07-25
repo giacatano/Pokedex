@@ -8,6 +8,9 @@
 import Foundation
 
 class InfoViewModel {
+    
+    //MARK: Variables
+    
     let pokemonRepository: PokemonRepositoryType?
     private var stats: [Statistics]
     private weak var delegate: HomeViewModelProtocol?
@@ -20,6 +23,8 @@ class InfoViewModel {
         self.stats = []
         self.delegate = delegate
     }
+    
+    //MARK: Functions
     
     func fetchPokemonStats(){
         pokemonRepository?.fetchPokemonStats(url: pokemonStatsEndpoint ?? "") { [weak self] result in

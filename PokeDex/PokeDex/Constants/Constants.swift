@@ -8,7 +8,6 @@
 import Foundation
 
 class Constants {
-    
     struct Identifiers {
         static let infoSegue = "infoSegue"
         static let infoTableViewCell = "InfoTableViewCell"

@@ -9,11 +9,17 @@ import UIKit
 
 class InfoViewController: UIViewController, HomeViewModelProtocol {
     
+    //MARK: IBOutlets
+    
     @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
     @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
     @IBOutlet private weak var pokemonStatsTableView: UITableView!
     
+    //MARK: Variables
+    
     private lazy var infoViewModel = InfoViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
+    
+    //MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +50,8 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     }
     
 }
+
+//MARK: Extensions
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
