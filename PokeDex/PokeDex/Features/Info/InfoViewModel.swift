@@ -24,6 +24,12 @@ class InfoViewModel {
         self.delegate = delegate
     }
     
+    //MARK: Computed Properties
+    
+    var numberOfRows: Int {
+        stats.count
+    }
+    
     //MARK: Functions
     
     func fetchPokemonStats(){

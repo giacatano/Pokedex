@@ -27,6 +27,12 @@ class HomeViewModel {
         self.delegate = delegate
     }
     
+    //MARK: Computed Properties
+    
+    var numberOfRows: Int {
+        pokemons.count
+    }
+    
     //MARK: Functions
     
     func fetchPokemon() {
