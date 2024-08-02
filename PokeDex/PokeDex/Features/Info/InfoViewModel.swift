@@ -11,15 +11,15 @@ class InfoViewModel {
     
     //MARK: Variables
     
-    let pokemonRepository: PokemonRepositoryType?
+    let pokemonInfoRepository: PokemonInfoRepositoryType?
     private var stats: [Statistics]
     private weak var delegate: HomeViewModelProtocol?
     private var pokemonStatsEndpoint: String?
     private var image: String?
     private var name: String?
     
-    init(pokemonRepository: PokemonRepositoryType?, delegate: HomeViewModelProtocol) {
-        self.pokemonRepository = pokemonRepository
+    init(pokemonInfoRepository: PokemonInfoRepositoryType?, delegate: HomeViewModelProtocol) {
+        self.pokemonInfoRepository = pokemonInfoRepository
         self.stats = []
         self.delegate = delegate
     }
@@ -27,7 +27,7 @@ class InfoViewModel {
     //MARK: Functions
     
     func fetchPokemonStats(){
-        pokemonRepository?.fetchPokemonStats(url: pokemonStatsEndpoint ?? "") { [weak self] result in
+        pokemonInfoRepository?.fetchPokemonStats(url: pokemonStatsEndpoint ?? "") { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
