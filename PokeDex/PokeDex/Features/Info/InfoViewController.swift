@@ -17,7 +17,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     //MARK: Variables
     
-    private lazy var infoViewModel = InfoViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
+    private lazy var infoViewModel = InfoViewModel(pokemonInfoRepository: PokemonInfoRepository(apiHandler: APIHandler()), delegate: self)
     
     //MARK: Functions
     
@@ -55,7 +55,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
 
 extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        infoViewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
