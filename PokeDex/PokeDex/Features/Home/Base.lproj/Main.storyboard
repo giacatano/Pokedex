@@ -12,9 +12,16 @@
         <scene sceneID="vb0-0g-lSR">
             <objects>
                 <navigationController id="qfk-Z1-1Su" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gx6-0l-UbD">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Gx6-0l-UbD">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Primary"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="PrimaryFont"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="PrimaryFont"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kUl-fO-8HF"/>
@@ -24,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-958" y="-2"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Pokédex-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PokeDex" sceneMemberID="viewController">
@@ -35,15 +42,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-N8-IIy">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Pokedéx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc6-eN-gfD">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="44.666666666666664"/>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                        <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
-                                        <color key="textColor" name="PrimaryFont"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0mN-wY-fex">
-                                        <rect key="frame" x="0.0" y="44.666666666666686" width="393" height="704.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableViewCell" rowHeight="400" id="Se4-Bx-5cn">
@@ -60,10 +60,6 @@
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="hc6-eN-gfD" firstAttribute="height" secondItem="eLe-N8-IIy" secondAttribute="height" multiplier="0.0595257" id="Wtb-y4-n9W"/>
-                                    <constraint firstItem="hc6-eN-gfD" firstAttribute="width" secondItem="eLe-N8-IIy" secondAttribute="width" id="jqe-gw-mc1"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,7 +71,9 @@
                             <constraint firstItem="eLe-N8-IIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qMl-89-AT7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cq9-f5-DSh"/>
+                    <navigationItem key="navigationItem" title="Pokédex" leftItemsSupplementBackButton="YES" style="editor" customizationIdentifier="" id="cq9-f5-DSh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="O9p-DJ-R56"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="pokemonTableView" destination="0mN-wY-fex" id="jze-mW-Hen"/>
                         <segue destination="EsN-HI-AaT" kind="show" identifier="infoSegue" id="xIA-Tr-4v2"/>
@@ -99,10 +97,10 @@
     <color key="tintColor" name="PrimaryFont"/>
     <resources>
         <namedColor name="Primary">
-            <color red="0.89215686274509798" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89200001955032349" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="PrimaryFont">
-            <color red="0.17527644730099887" green="0.17527644730099887" blue="0.18111901775306122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

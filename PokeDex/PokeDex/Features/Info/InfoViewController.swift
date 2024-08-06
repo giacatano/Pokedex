@@ -24,10 +24,12 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
         super.viewDidLoad()
         setUpTableView()
         infoViewModel.fetchPokemonStats()
+        setPokemonImage()
     }
     
     func setPokemonCharacter(url: String, image: String, name: String) {
         infoViewModel.setPokemonInfo(url: url, image: image, name: name)
+        navigationItem.title = name
     }
     
     func reloadView() {
@@ -37,11 +39,14 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     func showError(error: NetworkError) {
     }
     
+    private func setPokemonImage() {
+        pokemonCharacterImageView.load(urlString: Endpoints.images + infoViewModel.displayImage() + ".png")
+    }
+    
     private func setUpTableView() {
         pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: Constants.Identifiers.infoTableViewCell)
         pokemonStatsTableView.dataSource = self
         pokemonStatsTableView.delegate = self
-       // self.pokemonCharacterNameLabel.text = infoViewModel.displayName()
     }
 }
 

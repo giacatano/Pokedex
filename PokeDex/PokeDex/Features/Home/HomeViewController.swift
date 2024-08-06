@@ -70,7 +70,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let indexPath = sender as? IndexPath,
            segue.identifier == Constants.Identifiers.infoSegue {
             if let infoViewController = segue.destination as? InfoViewController {
-                infoViewController.setPokemonCharacter(url: homeViewModel.pokemonCharacter(index: indexPath.row)?.url ?? "", image: "", name: homeViewModel.pokemonCharacter(index: indexPath.row)?.name ?? "")
+                infoViewController.setPokemonCharacter(url: homeViewModel.pokemonCharacter(index: indexPath.row)?.url ?? "", image: String(indexPath.row + 1), name: homeViewModel.pokemonCharacter(index: indexPath.row)?.name ?? "")
             }
         }
     }
