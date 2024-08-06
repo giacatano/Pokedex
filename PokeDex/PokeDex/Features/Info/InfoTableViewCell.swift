@@ -16,10 +16,6 @@ class InfoTableViewCell: UITableViewCell {
     
     //MARK: Functions
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     static func setPokemonStatsNib() -> UINib {
         UINib(nibName: Constants.Identifiers.infoTableViewCell , bundle: nil)
     }

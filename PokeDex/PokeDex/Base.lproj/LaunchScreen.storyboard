@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-cx-YlK">
-                                <rect key="frame" x="149" y="411" width="95" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedéx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-cx-YlK">
+                                <rect key="frame" x="134.66666666666666" y="405" width="123.66666666666666" height="42.333333333333314"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
+                                <color key="textColor" name="PrimaryFont"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -38,7 +38,10 @@
     </scenes>
     <resources>
         <namedColor name="Primary">
-            <color red="0.86000001430511475" green="0.97899997234344482" blue="0.84200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89215686274509798" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="PrimaryFont">
+            <color red="0.17527644730099887" green="0.17527644730099887" blue="0.18111901775306122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

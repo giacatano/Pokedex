@@ -11,9 +11,8 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     //MARK: IBOutlets
     
-    @IBOutlet private weak var pokemonCharacterImageView: UIImageView!
-    @IBOutlet private weak var pokemonCharacterNameLabel: UILabel!
     @IBOutlet private weak var pokemonStatsTableView: UITableView!
+    @IBOutlet weak var pokemonCharacterImageView: UIImageView!
     
     //MARK: Variables
     
@@ -38,17 +37,12 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     func showError(error: NetworkError) {
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        infoViewModel.fetchPokemonStats()
-    }
-    
     private func setUpTableView() {
         pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: Constants.Identifiers.infoTableViewCell)
         pokemonStatsTableView.dataSource = self
         pokemonStatsTableView.delegate = self
-        self.pokemonCharacterNameLabel.text = infoViewModel.displayName()
+       // self.pokemonCharacterNameLabel.text = infoViewModel.displayName()
     }
-    
 }
 
 //MARK: Extensions
@@ -59,7 +53,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        infoViewModel.rowHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
