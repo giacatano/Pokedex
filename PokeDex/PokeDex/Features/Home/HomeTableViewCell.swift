@@ -16,10 +16,6 @@ class HomeTableViewCell: UITableViewCell {
     
     //MARK: Functions
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     static func setPokemonNib() -> UINib {
         UINib(nibName: Constants.Identifiers.homeTableViewCell , bundle: nil)
     }

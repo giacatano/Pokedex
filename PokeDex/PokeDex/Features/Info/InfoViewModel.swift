@@ -30,6 +30,10 @@ class InfoViewModel {
         stats.count
     }
     
+    var rowHeight: CGFloat {
+        50
+    }
+    
     //MARK: Functions
     
     func fetchPokemonStats(){
@@ -53,6 +57,10 @@ class InfoViewModel {
     
     func displayName() -> String {
         return self.name ?? ""
+    }
+    
+    func displayImage() -> String {
+        return self.image ?? ""
     }
     
     func displayScore(index: Int) -> String {
