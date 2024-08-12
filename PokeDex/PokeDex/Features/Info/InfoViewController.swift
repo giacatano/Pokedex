@@ -36,7 +36,8 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
         pokemonStatsTableView.reloadData()
     }
     
-    func showError(error: NetworkError) {
+    func showError(error: String) {
+        showAlert(title: Strings.Alerts.networkErrorTitle, message: Strings.Alerts.networkErrorTitle)
     }
     
     private func setPokemonImage() {
@@ -44,7 +45,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     }
     
     private func setUpTableView() {
-        pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: Constants.Identifiers.infoTableViewCell)
+        pokemonStatsTableView.register(InfoTableViewCell.setPokemonStatsNib(), forCellReuseIdentifier: Strings.Identifiers.infoTableViewCell)
         pokemonStatsTableView.dataSource = self
         pokemonStatsTableView.delegate = self
     }
@@ -62,7 +63,7 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let statsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.infoTableViewCell, for: indexPath) as? InfoTableViewCell else {
+        guard let statsNib = pokemonStatsTableView.dequeueReusableCell(withIdentifier: Strings.Identifiers.infoTableViewCell, for: indexPath) as? InfoTableViewCell else {
             return UITableViewCell()
         }
         statsNib.setupStatsUI(category: infoViewModel.displayCategory(index: indexPath.row), stat: infoViewModel.displayScore(index: indexPath.row))

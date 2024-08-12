@@ -29,11 +29,12 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
         pokemonTableView.reloadData()
     }
     
-    func showError(error: NetworkError) {
+    func showError(error: String) {
+        showAlert(title: Strings.Alerts.networkErrorTitle, message: Strings.Alerts.networkErrorTitle)
     }
     
     private func setUpTableView(){
-        pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: Constants.Identifiers.pokemonNib)
+        pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: Strings.Identifiers.pokemonNib)
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self
     }
@@ -51,7 +52,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.pokemonNib, for: indexPath) as? HomeTableViewCell else {
+        guard let pokemonNib = pokemonTableView.dequeueReusableCell(withIdentifier: Strings.Identifiers.pokemonNib, for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
         if let pokemon = homeViewModel.pokemonCharacter(index: indexPath.row) {
@@ -63,12 +64,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.Identifiers.infoSegue, sender: indexPath)
+        performSegue(withIdentifier: Strings.Identifiers.infoSegue, sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = sender as? IndexPath,
-           segue.identifier == Constants.Identifiers.infoSegue {
+           segue.identifier == Strings.Identifiers.infoSegue {
             if let infoViewController = segue.destination as? InfoViewController {
                 infoViewController.setPokemonCharacter(url: homeViewModel.pokemonCharacter(index: indexPath.row)?.url ?? "", image: String(indexPath.row + 1), name: homeViewModel.pokemonCharacter(index: indexPath.row)?.name ?? "")
             }

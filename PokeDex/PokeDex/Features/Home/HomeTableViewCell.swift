@@ -17,7 +17,7 @@ class HomeTableViewCell: UITableViewCell {
     //MARK: Functions
     
     static func setPokemonNib() -> UINib {
-        UINib(nibName: Constants.Identifiers.homeTableViewCell , bundle: nil)
+        UINib(nibName: Strings.Identifiers.homeTableViewCell , bundle: nil)
     }
     
     func setupPokemonUI(index: String, name: String) {
