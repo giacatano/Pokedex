@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    
     func load(urlString: String) {
         if let safeURL = URL(string: urlString) {
             DispatchQueue.global().async { [weak self] in

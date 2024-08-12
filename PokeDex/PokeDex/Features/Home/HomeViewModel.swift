@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeViewModelProtocol: AnyObject {
     func reloadView()
-    func showError(error: NetworkError)
+    func showError()
 }
 
 class HomeViewModel {
@@ -37,13 +37,15 @@ class HomeViewModel {
     
     func fetchPokemon() {
         pokemonRepository?.fetchPokemon { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let pokemon):
-                self?.pokemons  = pokemon.results
-                self?.delegate?.reloadView()
-                self?.savePokemonToCoreData()
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    self?.delegate?.showError()
+                case .success(let pokemon):
+                    self?.pokemons  = pokemon.results
+                    self?.delegate?.reloadView()
+                    self?.savePokemonToCoreData()
+                }
             }
         }
     }

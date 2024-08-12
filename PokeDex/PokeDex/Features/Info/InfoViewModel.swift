@@ -40,8 +40,7 @@ class InfoViewModel {
         pokemonInfoRepository?.fetchPokemonStats(url: pokemonStatsEndpoint ?? "") { [weak self] result in
             switch result {
             case .failure(let error):
-                print(error)
-                self?.delegate?.showError(error: error)
+                self?.delegate?.showError()
             case .success(let pokemonStats):
                 self?.stats = pokemonStats.stats
                 self?.delegate?.reloadView()
