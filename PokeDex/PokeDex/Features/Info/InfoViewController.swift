@@ -36,8 +36,8 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
         pokemonStatsTableView.reloadData()
     }
     
-    func showError(error: String) {
-        showAlert(title: Strings.Alerts.networkErrorTitle, message: Strings.Alerts.networkErrorTitle)
+    func showError() {
+        showAlert(title: Strings.Alerts.networkErrorTitle, message: Strings.Alerts.networkErrorMessage)
     }
     
     private func setPokemonImage() {

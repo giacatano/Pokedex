@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeViewModelProtocol: AnyObject {
     func reloadView()
-    func showError(error: String)
+    func showError()
 }
 
 class HomeViewModel {
@@ -40,7 +40,7 @@ class HomeViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
-                    self?.delegate?.showError(error: error.localizedDescription)
+                    self?.delegate?.showError()
                 case .success(let pokemon):
                     self?.pokemons  = pokemon.results
                     self?.delegate?.reloadView()
