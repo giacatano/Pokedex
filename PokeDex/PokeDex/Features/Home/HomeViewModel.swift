@@ -59,7 +59,7 @@ class HomeViewModel {
     
     func savePokemonToCoreData() {
         for pokemon in pokemons {
-            coreData.saveObjectIntoCoreData(name: pokemon.name)
+            coreData.addPokemonCoreData(name: pokemon.name)
         }
     }
 }

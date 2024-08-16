@@ -3,4 +3,7 @@
     <entity name="PokemonCoreData" representedClassName="PokemonCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="StatisticsCoreData" representedClassName="StatisticsCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="baseStat" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
 </model>

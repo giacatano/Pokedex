@@ -17,6 +17,7 @@ class InfoViewModel {
     private var pokemonStatsEndpoint: String?
     private var image: String?
     private var name: String?
+    let coreData = CoreDataHandler()
     
     init(pokemonInfoRepository: PokemonInfoRepositoryType?, delegate: HomeViewModelProtocol) {
         self.pokemonInfoRepository = pokemonInfoRepository
@@ -44,6 +45,7 @@ class InfoViewModel {
             case .success(let pokemonStats):
                 self?.stats = pokemonStats.stats
                 self?.delegate?.reloadView()
+                self?.saveStatisticsToCoreData()
             }
         }
     }
@@ -74,5 +76,11 @@ class InfoViewModel {
             return ""
         }
         return stats[index].stat.name
+    }
+    
+    func saveStatisticsToCoreData() {
+        for stat in stats {
+            coreData.addStatisticsCoreData(baseStat: Int64(stat.base_stat))
+        }
     }
 }

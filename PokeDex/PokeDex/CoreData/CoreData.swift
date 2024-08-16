@@ -24,19 +24,36 @@ class CoreDataHandler: CoreDataHandlerType {
         context = appDelegate.persistentContainer.viewContext
     }
     
-    func saveObjectIntoCoreData(name: String) {
+    func addPokemonCoreData(name: String) {
         let newPokemon = PokemonCoreData(context: context)
         newPokemon.name = name
         saveContext()
-        print("saved into core data: \(name)")
+        print("saved name into core data: \(name)")
+    }
+    
+    func addStatisticsCoreData(baseStat: Int64) {
+        let newStatistic = StatisticsCoreData(context: context)
+        newStatistic.baseStat = baseStat
+        saveContext()
+        print("saved stat into core data: \(baseStat)")
     }
     
     func fetchNames() -> [PokemonCoreData] {
         
         do {
             let fetchedPokemons = try context.fetch(PokemonCoreData.fetchRequest())
-            print("loaded from coredata: \(fetchedPokemons)")
+            print("loaded pokemons from coredata: \(fetchedPokemons)")
             return fetchedPokemons
+        } catch {
+            return []
+        }
+    }
+    
+    func fetchStats() -> [StatisticsCoreData] {
+        do {
+            let fetchedStats = try context.fetch(StatisticsCoreData.fetchRequest())
+            print("loaded stats from coredata: \(fetchedStats)")
+            return fetchedStats
         } catch {
             return []
         }
