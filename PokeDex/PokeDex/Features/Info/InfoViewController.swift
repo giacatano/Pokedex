@@ -16,7 +16,7 @@ class InfoViewController: UIViewController, HomeViewModelProtocol {
     
     //MARK: Variables
     
-    private lazy var infoViewModel = InfoViewModel(pokemonInfoRepository: PokemonInfoRepository(apiHandler: APIHandler()), delegate: self)
+    private lazy var infoViewModel = InfoViewModel(pokemonInfoRepository: PokemonInfoRepository(apiHandler: APIHandler(), coreDataHandler: CoreDataHandler()), delegate: self)
     
     //MARK: Functions
     

@@ -17,7 +17,6 @@ class InfoViewModel {
     private var pokemonStatsEndpoint: String?
     private var image: String?
     private var name: String?
-    let coreData = CoreDataHandler()
     
     init(pokemonInfoRepository: PokemonInfoRepositoryType?, delegate: HomeViewModelProtocol) {
         self.pokemonInfoRepository = pokemonInfoRepository
@@ -40,7 +39,7 @@ class InfoViewModel {
     func fetchPokemonStats(){
         pokemonInfoRepository?.fetchPokemonStats(url: pokemonStatsEndpoint ?? "") { [weak self] result in
             switch result {
-            case .failure(let error):
+            case .failure(_):
                 self?.delegate?.showError()
             case .success(let pokemonStats):
                 self?.stats = pokemonStats.stats
@@ -78,9 +77,9 @@ class InfoViewModel {
         return stats[index].stat.name
     }
     
-    func saveStatisticsToCoreData() {
+    private func saveStatisticsToCoreData() {
         for stat in stats {
-            coreData.addStatisticsCoreData(baseStat: Int64(stat.base_stat))
+            pokemonInfoRepository?.fetchPokemonStatsFromCoreData(baseStat: Int64(stat.base_stat))
         }
     }
 }

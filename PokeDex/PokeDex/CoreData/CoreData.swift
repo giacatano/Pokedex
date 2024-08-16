@@ -9,10 +9,19 @@ import Foundation
 import CoreData
 import UIKit
 
+// MARK: - Core Data Handler Protocol
+
 protocol CoreDataHandlerType {
+    func addPokemonCoreData(name: String)
+    func addStatisticsCoreData(baseStat: Int64)
 }
 
+// MARK: - Core Data Class
+
 class CoreDataHandler: CoreDataHandlerType {
+    
+    // MARK: - Variables
+    
     weak var appDelegate: AppDelegate?
     let context: NSManagedObjectContext
     
@@ -23,6 +32,8 @@ class CoreDataHandler: CoreDataHandlerType {
         self.appDelegate = appDelegate
         context = appDelegate.persistentContainer.viewContext
     }
+    
+    // MARK: - Core Data CRUD Functions
     
     func addPokemonCoreData(name: String) {
         let newPokemon = PokemonCoreData(context: context)
@@ -38,8 +49,7 @@ class CoreDataHandler: CoreDataHandlerType {
         print("saved stat into core data: \(baseStat)")
     }
     
-    func fetchNames() -> [PokemonCoreData] {
-        
+    private func fetchNames() -> [PokemonCoreData] {
         do {
             let fetchedPokemons = try context.fetch(PokemonCoreData.fetchRequest())
             print("loaded pokemons from coredata: \(fetchedPokemons)")
@@ -49,7 +59,7 @@ class CoreDataHandler: CoreDataHandlerType {
         }
     }
     
-    func fetchStats() -> [StatisticsCoreData] {
+    private func fetchStats() -> [StatisticsCoreData] {
         do {
             let fetchedStats = try context.fetch(StatisticsCoreData.fetchRequest())
             print("loaded stats from coredata: \(fetchedStats)")
