@@ -58,7 +58,7 @@ class HomeViewModel {
     
     private func fetchPokemonFromCoreData() {
         for pokemon in pokemons {
-            pokemonRepository?.fetchPokemonFromCoreData(name: pokemon.name)
+            pokemonRepository?.addPokemonToCoreData(name: pokemon.name)
         }
     }
 }

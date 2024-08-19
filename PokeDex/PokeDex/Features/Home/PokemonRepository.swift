@@ -15,7 +15,7 @@ typealias PokemonResult = (Result<PokemonResponse, NetworkError>) -> Void
 
 protocol PokemonRepositoryType {
     func fetchPokemon(completion: @escaping PokemonResult)
-    func fetchPokemonFromCoreData(name: String)
+    func addPokemonToCoreData(name: String)
 }
 
 // MARK: Pokemon Repository
@@ -33,7 +33,7 @@ class PokemonRepository: PokemonRepositoryType {
         apiHandler.request(endpoint: Endpoints.pokemon, header: .GET, model: PokemonResponse.self, completion: completion)
     }
     
-    func fetchPokemonFromCoreData(name: String) {
-        coreDataHandler.addPokemonCoreData(name: name)
+    func addPokemonToCoreData(name: String) {
+        coreDataHandler.savePokemonIntoCoreData(name: name)
     }
 }

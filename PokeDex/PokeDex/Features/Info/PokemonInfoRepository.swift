@@ -15,7 +15,6 @@ typealias PokemonStatsResult = (Result<PokemonInfoResponse, NetworkError>) -> Vo
 
 protocol PokemonInfoRepositoryType {
     func fetchPokemonStats(url: String, completion: @escaping PokemonStatsResult)
-    func fetchPokemonStatsFromCoreData(baseStat: Int64)
 }
 
 // MARK: Pokemon Info Repository
@@ -31,9 +30,5 @@ class PokemonInfoRepository: PokemonInfoRepositoryType {
     
     func fetchPokemonStats(url: String, completion: @escaping PokemonStatsResult) {
         apiHandler.request(endpoint: url, header: .GET, model: PokemonInfoResponse.self, completion: completion)
-    }
-    
-    func fetchPokemonStatsFromCoreData(baseStat: Int64) {
-        coreDataHandler.addStatisticsCoreData(baseStat: baseStat)
     }
 }

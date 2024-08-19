@@ -12,8 +12,7 @@ import UIKit
 // MARK: - Core Data Handler Protocol
 
 protocol CoreDataHandlerType {
-    func addPokemonCoreData(name: String)
-    func addStatisticsCoreData(baseStat: Int64)
+    func savePokemonIntoCoreData(name: String)
 }
 
 // MARK: - Core Data Class
@@ -35,18 +34,11 @@ class CoreDataHandler: CoreDataHandlerType {
     
     // MARK: - Core Data CRUD Functions
     
-    func addPokemonCoreData(name: String) {
+    func savePokemonIntoCoreData(name: String) {
         let newPokemon = PokemonCoreData(context: context)
         newPokemon.name = name
         saveContext()
         print("saved name into core data: \(name)")
-    }
-    
-    func addStatisticsCoreData(baseStat: Int64) {
-        let newStatistic = StatisticsCoreData(context: context)
-        newStatistic.baseStat = baseStat
-        saveContext()
-        print("saved stat into core data: \(baseStat)")
     }
     
     private func fetchNames() -> [PokemonCoreData] {
@@ -54,16 +46,6 @@ class CoreDataHandler: CoreDataHandlerType {
             let fetchedPokemons = try context.fetch(PokemonCoreData.fetchRequest())
             print("loaded pokemons from coredata: \(fetchedPokemons)")
             return fetchedPokemons
-        } catch {
-            return []
-        }
-    }
-    
-    private func fetchStats() -> [StatisticsCoreData] {
-        do {
-            let fetchedStats = try context.fetch(StatisticsCoreData.fetchRequest())
-            print("loaded stats from coredata: \(fetchedStats)")
-            return fetchedStats
         } catch {
             return []
         }

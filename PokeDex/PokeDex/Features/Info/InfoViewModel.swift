@@ -44,7 +44,6 @@ class InfoViewModel {
             case .success(let pokemonStats):
                 self?.stats = pokemonStats.stats
                 self?.delegate?.reloadView()
-                self?.saveStatisticsToCoreData()
             }
         }
     }
@@ -75,11 +74,5 @@ class InfoViewModel {
             return ""
         }
         return stats[index].stat.name
-    }
-    
-    private func saveStatisticsToCoreData() {
-        for stat in stats {
-            pokemonInfoRepository?.fetchPokemonStatsFromCoreData(baseStat: Int64(stat.base_stat))
-        }
     }
 }
