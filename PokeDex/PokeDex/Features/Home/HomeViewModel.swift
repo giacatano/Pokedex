@@ -19,7 +19,6 @@ class HomeViewModel {
     let pokemonRepository: PokemonRepositoryType?
     private var pokemons: [Pokemon]
     private weak var delegate: HomeViewModelProtocol?
-    let coreData = CoreDataHandler()
     
     init(pokemonRepository: PokemonRepositoryType?, delegate: HomeViewModelProtocol) {
         self.pokemonRepository = pokemonRepository
@@ -39,12 +38,12 @@ class HomeViewModel {
         pokemonRepository?.fetchPokemon { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .failure(let error):
+                case .failure(_):
                     self?.delegate?.showError()
                 case .success(let pokemon):
                     self?.pokemons  = pokemon.results
                     self?.delegate?.reloadView()
-                    self?.savePokemonToCoreData()
+                    self?.fetchPokemonFromCoreData()
                 }
             }
         }
@@ -57,9 +56,9 @@ class HomeViewModel {
         return self.pokemons[index]
     }
     
-    func savePokemonToCoreData() {
+    private func fetchPokemonFromCoreData() {
         for pokemon in pokemons {
-            coreData.saveObjectIntoCoreData(name: pokemon.name)
+            pokemonRepository?.addPokemonToCoreData(name: pokemon.name)
         }
     }
 }

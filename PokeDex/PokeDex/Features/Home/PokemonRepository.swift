@@ -7,20 +7,33 @@
 
 import Foundation
 
+// MARK: Typealias
+
 typealias PokemonResult = (Result<PokemonResponse, NetworkError>) -> Void
+
+// MARK: Protocol
 
 protocol PokemonRepositoryType {
     func fetchPokemon(completion: @escaping PokemonResult)
+    func addPokemonToCoreData(name: String)
 }
+
+// MARK: Pokemon Repository
 
 class PokemonRepository: PokemonRepositoryType {
     let apiHandler: APIHandlerType
+    let coreDataHandler: CoreDataHandlerType
     
-    init(apiHandler: APIHandlerType) {
+    init(apiHandler: APIHandlerType, coreDataHandler: CoreDataHandlerType) {
         self.apiHandler = apiHandler
+        self.coreDataHandler = coreDataHandler
     }
     
     func fetchPokemon(completion: @escaping PokemonResult) {
         apiHandler.request(endpoint: Endpoints.pokemon, header: .GET, model: PokemonResponse.self, completion: completion)
+    }
+    
+    func addPokemonToCoreData(name: String) {
+        coreDataHandler.savePokemonIntoCoreData(name: name)
     }
 }

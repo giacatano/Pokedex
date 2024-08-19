@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
     
     //MARK: Variables
     
-    private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler()), delegate: self)
+    private lazy var homeViewModel = HomeViewModel(pokemonRepository: PokemonRepository(apiHandler: APIHandler(), coreDataHandler: CoreDataHandler()), delegate: self)
     
     //MARK: Functions
     
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, HomeViewModelProtocol {
         showAlert(title: Strings.Alerts.networkErrorTitle, message: Strings.Alerts.networkErrorMessage)
     }
     
-    private func setUpTableView(){
+    private func setUpTableView() {
         pokemonTableView.register(HomeTableViewCell.setPokemonNib(), forCellReuseIdentifier: Strings.Identifiers.pokemonNib)
         pokemonTableView.dataSource = self
         pokemonTableView.delegate = self

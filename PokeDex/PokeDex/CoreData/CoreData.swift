@@ -9,10 +9,18 @@ import Foundation
 import CoreData
 import UIKit
 
+// MARK: - Core Data Handler Protocol
+
 protocol CoreDataHandlerType {
+    func savePokemonIntoCoreData(name: String)
 }
 
+// MARK: - Core Data Class
+
 class CoreDataHandler: CoreDataHandlerType {
+    
+    // MARK: - Variables
+    
     weak var appDelegate: AppDelegate?
     let context: NSManagedObjectContext
     
@@ -24,18 +32,19 @@ class CoreDataHandler: CoreDataHandlerType {
         context = appDelegate.persistentContainer.viewContext
     }
     
-    func saveObjectIntoCoreData(name: String) {
+    // MARK: - Core Data CRUD Functions
+    
+    func savePokemonIntoCoreData(name: String) {
         let newPokemon = PokemonCoreData(context: context)
         newPokemon.name = name
         saveContext()
-        print("saved into core data: \(name)")
+        print("saved name into core data: \(name)")
     }
     
-    func fetchNames() -> [PokemonCoreData] {
-        
+    private func fetchNames() -> [PokemonCoreData] {
         do {
             let fetchedPokemons = try context.fetch(PokemonCoreData.fetchRequest())
-            print("loaded from coredata: \(fetchedPokemons)")
+            print("loaded pokemons from coredata: \(fetchedPokemons)")
             return fetchedPokemons
         } catch {
             return []
